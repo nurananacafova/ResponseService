@@ -1,0 +1,12 @@
+2023-04-14 12:22:50.4849||INFO|ResponseService.EmailService|Mail received from:newmailfortests1@gmail.com 
+2023-04-14 12:22:50.5531||INFO|ResponseService.EmailService|Mail send to:newmailfortests1@gmail.com 
+2023-04-14 12:22:50.5710||INFO|ResponseService.EmailService|Mail content:string 
+2023-04-14 12:22:54.1977||INFO|ResponseService.EmailService|Connect to smtp.gmail.com 
+2023-04-14 12:22:55.3877||INFO|ResponseService.EmailService|Mail sent! 
+2023-04-14 12:22:55.4829||INFO|ResponseService.EmailService|Disconnect from smtp.gmail.com 
+2023-04-14 15:25:29.4210||INFO|ResponseService.EmailService|Mail received from: newmailfortests1@gmail.com 
+2023-04-14 15:25:29.4822||INFO|ResponseService.EmailService|Mail send to: newmailfortests1@gmail.com 
+2023-04-14 15:25:29.4998||INFO|ResponseService.EmailService|Mail content: string 
+2023-04-14 15:25:30.3605||INFO|ResponseService.EmailService|Connect to smtp.gmail.com 
+2023-04-14 15:25:31.4502||INFO|ResponseService.EmailService|Mail sent! 
+2023-04-14 15:25:31.5395||INFO|ResponseService.EmailService|Disconnect from smtp.gmail.com 
