@@ -1,6 +1,8 @@
+using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MimeKit;
 using ResponseService.Models;
 using ResponseService.Services;
