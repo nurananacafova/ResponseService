@@ -4,7 +4,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["ResponseService/ResponseService.csproj", "LoanService/"]
+COPY ["ResponseService/ResponseService.csproj", "ResponseService/"]
 RUN dotnet restore "ResponseService/ResponseService.csproj"
 COPY . .
 WORKDIR "/src/ResponseService"
