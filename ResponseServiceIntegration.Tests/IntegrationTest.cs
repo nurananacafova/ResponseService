@@ -21,7 +21,7 @@ public class IntegrationTest
 
         var server = WireMockServer.Start();
         var httpClient = server.CreateClient();
-        httpClient.BaseAddress = new Uri($"http://localhost:{5001}");
+        httpClient.BaseAddress = new Uri($"https://nurananacafova-responseservice.nativeci.app");
 
         var response = await httpClient.PostAsJsonAsync("/api/Mail/SendMail", data);
         var body = await response.Content.ReadAsStringAsync();
