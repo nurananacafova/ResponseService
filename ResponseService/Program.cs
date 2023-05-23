@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Web;
 using ResponseService;
+using ResponseService.Models;
 using IMailService = ResponseService.Services.IEmailService;
 
 
@@ -24,7 +25,7 @@ try
     builder.Services.AddSwaggerGen();
 
     builder.Services.AddTransient<IMailService, EmailService>();
-
+    builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
     var logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
     GlobalDiagnosticsContext.Set("LogDirectory", logPath);
     builder.Logging.ClearProviders();
