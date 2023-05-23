@@ -19,10 +19,7 @@ public class EmailService : IEmailService
     {
         _logger = logger;
         _mailSettings = mailSettings.Value;
-
     }
-
-
 
 
     public async Task SendEmailAsync([FromBody] EmailModel emailModel)
@@ -30,17 +27,21 @@ public class EmailService : IEmailService
     {
         var email = new MimeMessage();
         email.From.Add(MailboxAddress.Parse(_mailSettings.From));
-        _logger.LogInformation($"Mail received from: {emailModel.From}");
+        _logger.LogInformation($"Mail received from: {_mailSettings.From}");
+
         email.To.Add(MailboxAddress.Parse(emailModel.To));
         _logger.LogInformation($"Mail send to: {emailModel.To}");
+
         var builder = new BodyBuilder();
         builder.HtmlBody = emailModel.Content;
         email.Body = builder.ToMessageBody();
         _logger.LogInformation($"Mail content: {emailModel.Content}");
+
         using var smtp = new SmtpClient();
         smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTlsWhenAvailable);
         _logger.LogInformation("Connect to smtp.gmail.com");
         smtp.Authenticate(_mailSettings.From, _mailSettings.Password);
+
         await smtp.SendAsync(email);
         _logger.LogInformation("Mail sent!");
         smtp.Disconnect(true);

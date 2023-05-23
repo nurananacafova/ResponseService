@@ -16,8 +16,6 @@ public class IntegrationTest
         var data = new EmailModel()
         {
             To = "newmailfortests1@gmail.com",
-            From = "newmailfortests1@gmail.com",
-            Password = "ngrtheilnrcfzroz",
             Content = "Hello World"
         };
 
