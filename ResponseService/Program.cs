@@ -25,6 +25,7 @@ try
     builder.Services.AddSwaggerGen();
 
     builder.Services.AddTransient<IMailService, EmailService>();
+    // new ConfigurationBuilder().AddJsonFile("appsettings.Development.json").Build().GetSection("MailSettings");
     builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
     var logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
     GlobalDiagnosticsContext.Set("LogDirectory", logPath);
