@@ -30,7 +30,7 @@ public class EmailService : IEmailService
     {
         var email = new MimeMessage();
         email.From.Add(MailboxAddress.Parse(_mailSettings.From));
-        _logger.LogInformation($"Mail received from: {emailModel.From}");
+        _logger.LogInformation($"Mail received from: {_mailSettings.From}");
         email.To.Add(MailboxAddress.Parse(emailModel.To));
         _logger.LogInformation($"Mail send to: {emailModel.To}");
         var builder = new BodyBuilder();
