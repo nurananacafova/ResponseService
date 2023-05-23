@@ -22,7 +22,7 @@ try
 
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen(c => { c.EnableAnnotations(); });
+    builder.Services.AddSwaggerGen();
 
     builder.Services.AddTransient<IMailService, EmailService>();
     builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
