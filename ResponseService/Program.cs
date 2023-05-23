@@ -22,7 +22,7 @@ try
 
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+    builder.Services.AddSwaggerGen(c => { c.EnableAnnotations(); });
 
     builder.Services.AddTransient<IMailService, EmailService>();
     builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
@@ -33,7 +33,7 @@ try
 
     var app = builder.Build();
 
-    if (app.Environment.IsDevelopment()||app.Environment.IsProduction())
+    if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     {
         app.UseSwagger();
         app.UseSwaggerUI();
